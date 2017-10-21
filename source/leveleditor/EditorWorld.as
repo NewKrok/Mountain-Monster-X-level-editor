@@ -44,6 +44,8 @@
 		protected var _libraryElements:Vector.<LibraryElement> = new Vector.<LibraryElement>;
 		
 		private var _starValues:Array = [];
+		private var _worldId:int;
+		private var _levelId:int;
 
 		protected var _controlType:String = '';
 		protected var _dragStartPoint:Point = new Point;
@@ -564,6 +566,8 @@
 			_cameraBound.init(levelData.cameraBounds);
 			
 			_starValues = levelData.starValues;
+			_worldId = levelData.worldId;
+			_levelId = levelData.levelId;
 
 			if( levelData.libraryElements )
 			{
@@ -601,6 +605,8 @@
 			levelData.libraryElements = this.createLibraryElementExportData();
 			levelData.cameraBounds = _cameraBound.getData();
 			levelData.starValues = _starValues;
+			levelData.worldId = _worldId;
+			levelData.levelId = _levelId;
 			
 			var finishObject:GameObject = new GameObject();
 			finishObject.x = _finishMarker.x;
